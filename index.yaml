@@ -1,0 +1,75 @@
+apiVersion: v1
+entries:
+  jenkins:
+  - apiVersion: v1
+    appVersion: lts
+    created: "2023-11-29T16:01:56.740767+01:00"
+    deprecated: true
+    description: DEPRECATED - Open source continuous integration server. It supports
+      multiple SCM tools including CVS, Subversion and Git. It can execute Apache
+      Ant and Apache Maven-based projects as well as arbitrary scripts.
+    digest: 47c5bbdb779b3296e8e180c1f44fddf3c4f4084a01de4c1a458117a54f20f5a4
+    home: https://jenkins.io/
+    icon: https://wiki.jenkins-ci.org/download/attachments/2916393/logo.png
+    name: jenkins
+    sources:
+    - https://github.com/jenkinsci/jenkins
+    - https://github.com/jenkinsci/docker-jnlp-slave
+    - https://github.com/maorfr/kube-tasks
+    - https://github.com/jenkinsci/configuration-as-code-plugin
+    urls:
+    - jenkins-2.5.4.tgz
+    version: 2.5.4
+  postgresql:
+  - apiVersion: v1
+    appVersion: 11.7.0
+    created: "2023-11-29T16:01:56.744084+01:00"
+    deprecated: true
+    description: DEPRECATED Chart for PostgreSQL, an object-relational database management
+      system (ORDBMS) with an emphasis on extensibility and on standards-compliance.
+    digest: 00745b88e84403be696b7514c6e8c02710d81eb6074876b0700fa28fd47a9b43
+    home: https://www.postgresql.org/
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-110x117.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    name: postgresql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-postgresql
+    urls:
+    - postgresql-8.6.4.tgz
+    version: 8.6.4
+  sonarqube:
+  - apiVersion: v1
+    appVersion: 7.9.2
+    created: "2023-11-29T16:01:56.74868+01:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 8.2.0
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 0.6.0
+    deprecated: true
+    description: DEPRECATED SonarQube is an open sourced code quality scanning tool
+    digest: 5287ba4863b3cc5013ee6b03ec996a51e39a1dd50f4e3309501087ba1b5a984f
+    home: https://www.sonarqube.org/
+    icon: https://www.sonarqube.org/assets/logo-31ad3115b1b4b120f3d1efd63e6b13ac9f1f89437f0cf6881cc4d8b5603a52b4.svg
+    keywords:
+    - coverage
+    - security
+    - code
+    - quality
+    name: sonarqube
+    sources:
+    - https://github.com/SonarSource/docker-sonarqube
+    urls:
+    - sonarqube-4.0.1.tgz
+    version: 4.0.1
+generated: "2023-11-29T16:01:56.731813+01:00"
